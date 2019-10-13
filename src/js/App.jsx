@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-bind */
-import {hot} from 'react-hot-loader/root';
+import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {

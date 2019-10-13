@@ -6,6 +6,7 @@ import { push } from 'connected-react-router';
 
 import Button from 'common/Button';
 import { updateSelected } from 'spot/spot-actions';
+import { dollarsAndCents } from 'common/dollarsAndCents';
 
 const DURATION = 250;
 const VARIANTS = {
@@ -17,6 +18,14 @@ const Modal = ({ selectedSpot, setSpot: removeSpot, pushTo }) => {
     const [showModal, setShowModal] = useState(false);
     useEffect(() => setShowModal(Boolean(selectedSpot)), [selectedSpot]);
 
+    if (!selectedSpot) { return null; }
+
+    const { title, price, description } = selectedSpot;
+
+    function onClickThrough() {
+        pushTo('/checkout');
+    }
+
     function onClickClose() {
         setShowModal(false);
         setTimeout(removeSpot, DURATION);
@@ -25,10 +34,6 @@ const Modal = ({ selectedSpot, setSpot: removeSpot, pushTo }) => {
     function stopCloseBubbling(e) {
         e.stopPropagation();
     }
-
-    if (!selectedSpot) { return null; }
-
-    const { title, price, description } = selectedSpot;
 
     return (
         <div
@@ -51,9 +56,9 @@ const Modal = ({ selectedSpot, setSpot: removeSpot, pushTo }) => {
 
                 <Button
                     color="primary"
-                    onClick={pushTo('/Checkout')}
+                    onClick={onClickThrough}
                 >
-                    ${(price / 100).toFixed(2)} | Book it!
+                    ${dollarsAndCents(price)} | Book it!
                 </Button>
                 <div
                     className="Closer"

@@ -1,0 +1,37 @@
+input,
+label {
+    display: block;
+    width: 100%;
+}
+
+label {
+    margin: 20px 0 5px;
+}
+
+input {
+    height: 40px;
+    margin: 0 0 10px;
+    border: 1px solid $color-dashboard;
+    border-radius: 3px;
+    padding: 0 10px;
+    outline-offset: -3px;
+
+    &:focus {
+        outline: $color-go auto 2px;
+    }
+}
+
+span {
+    font-size: 90%;
+}
+
+.InputError {
+    label,
+    input,
+    span {
+        color: $color-stop;
+    }
+    input {
+        border: 1px solid $color-stop;
+    }
+}

@@ -16,10 +16,10 @@ const Button = ({
 }) => {
     const classes = classNames(
         'Button',
-        {[`Button-${color}`]: color},
-        {'Button-block': block},
-        {'Button-loading': loading},
-        {[`Button-with-icon-${iconPosition}`]: iconPosition},
+        { [`Button-${color}`]: color },
+        { 'Button-block': block },
+        { 'Button-loading': loading },
+        { [`Button-with-icon-${iconPosition}`]: iconPosition },
         className
     );
 
@@ -44,7 +44,7 @@ Button.propTypes = {
     /** The type of button that is rendered. */
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
     /** The color of the button. */
-    color: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
+    color: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'go']),
     /** If an icon is provided, whether to add the margin to the icon on the left or right side. */
     iconPosition: PropTypes.oneOf(['left', 'right']),
     /** Whether the button should display as a block level element. */

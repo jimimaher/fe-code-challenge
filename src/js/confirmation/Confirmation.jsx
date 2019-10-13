@@ -1,15 +1,18 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {push} from 'connected-react-router';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
 import Button from 'common/Button';
 import Image from 'common/Image';
+import { updateSelected } from 'spot/spot-actions';
+import { dollarsAndCents } from 'common/dollarsAndCents';
 
 class Confirmation extends PureComponent {
     static propTypes = {
         email: PropTypes.string.isRequired,
         selectedSpot: PropTypes.object,
-        pushTo: PropTypes.func.isRequired
+        pushTo: PropTypes.func.isRequired,
+        setSpot: PropTypes.func.isRequired,
     };
 
     constructor(props) {
@@ -29,9 +32,11 @@ class Confirmation extends PureComponent {
     _onPurchaseAnotherClick = evt => {
         const {
             pushTo,
+            setSpot,
         } = this.props;
 
         pushTo('/');
+        setSpot(null);
     }
 
     render() {
@@ -47,7 +52,7 @@ class Confirmation extends PureComponent {
         return (
             <div className="Confirmation">
                 <h1>Park it like its hot!</h1>
-                <p>You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${(selectedSpot.price / 100).toFixed(2)}</strong>.</p>
+                <p>You successfully purchased parking at <strong>{selectedSpot.title}</strong> for <strong>${dollarsAndCents(selectedSpot.price)}</strong>.</p>
                 <Image src={selectedSpot.image} />
                 <p>We emailed a receipt to <a href={`mailto:${email}`}>{email}</a>.</p>
                 <Button
@@ -79,6 +84,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     pushTo: push,
+    setSpot: updateSelected,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Confirmation);

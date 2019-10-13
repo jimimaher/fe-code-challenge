@@ -18,7 +18,8 @@
     "start": "concurrently \"npm run db\" \"ACE_NPM_EVENT=start ace\"",
     "test": "ACE_NPM_EVENT=test ace -- test & wait-on http://localhost:3000 && npm run cypress:open",
     "cypress:open": "ace -- generateWebpackSettings && cypress open",
-    "cypress:run": "ace -- generateWebpackSettings && cypress run"
+    "cypress:run": "ace -- generateWebpackSettings && cypress run",
+    "cypress": "npm run cypress"
   },
   "devDependencies": {
     "@spothero/ace": "8.0.2",
@@ -30,11 +31,13 @@
     "classnames": "2.2.6",
     "connected-react-router": "6.4.0",
     "core-js": "3.0.1",
+    "final-form": "4.18.5",
     "framer-motion": "1.6.12",
     "history": "4.9.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
+    "react-final-form": "6.3.0",
     "react-hot-loader": "4.8.4",
     "react-redux": "7.0.3",
     "react-router-dom": "5.0.0",

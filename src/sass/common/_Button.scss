@@ -128,6 +128,25 @@
     }
 }
 
+.Button-go {
+    background-color: $color-go;
+    color: $color-white;
+    border: 1px solid $color-go;
+
+    &:not([disabled]) {
+        &:hover {
+            background-color: $color-accelerate;
+            border-color: $color-accelerate;
+        }
+    }
+
+    &:disabled {
+        background-color: $color-pavement;
+        color: $color-cement;
+        border: 1px solid $color-dashboard;
+    }
+}
+
 .Button-loading {
     position: relative;
     pointer-events: none;

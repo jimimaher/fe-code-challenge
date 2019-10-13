@@ -4,25 +4,24 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-}
 
-.Modal .Container {
-    position: relative;
-    background: #ffffff;
-    border-radius: 8px;
-    max-width: 600px;
-    padding: 20px 40px;
-    text-align: center;
-}
+    .Container {
+        position: relative;
+        background: $color-white;
+        border-radius: 8px;
+        max-width: 600px;
+        padding: 20px 40px;
+        text-align: center;
+    }
 
-.Modal .Inner {
-    text-align: left;
-    padding: 20px;
-}
-
-.Closer {
-    position: absolute;
-    cursor: pointer;
-    top: 10px;
-    right: 10px;
+    .Inner {
+        text-align: left;
+        padding: 20px;
+    }
+    .Closer {
+        position: absolute;
+        cursor: pointer;
+        top: 10px;
+        right: 10px;
+    }
 }
