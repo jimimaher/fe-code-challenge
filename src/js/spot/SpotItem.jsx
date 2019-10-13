@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from 'common/Image';
@@ -36,7 +36,7 @@ export default class SpotItem extends PureComponent {
         } = this.props;
         const classes = classNames(
             'SpotItem',
-            {'SpotItem-selected': isSelected}
+            { 'SpotItem-selected': isSelected }
         );
 
         return (

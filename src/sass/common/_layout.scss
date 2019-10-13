@@ -12,7 +12,7 @@ html {
         @include font-family();
         @include font-size();
         font-weight: $font-weight-normal;
-        background-color: $color-pavement;
+        background-color: $color-base;
         color: $color-fuel;
     }
 

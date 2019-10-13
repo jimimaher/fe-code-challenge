@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {updateSelected} from 'spot/spot-actions';
+import { connect } from 'react-redux';
+import { updateSelected } from 'spot/spot-actions';
 import SpotList from './spot-list/SpotList';
+import Modal from '../modal/modal';
 
 const Search = ({
     selectedSpot,
@@ -16,7 +17,10 @@ const Search = ({
                 selectedSpot={selectedSpot}
                 setSpot={setSpot}
             />
-            <div className="Search-content" />
+            <div className="Search-content" >
+                <Modal selectedSpot={selectedSpot} />
+            </div>
+
         </div>
     );
 };
